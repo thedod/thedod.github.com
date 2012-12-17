@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Demagnetizr V0.4b - Tweetable magnet links</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  <!-- Le styles -->
+  <link href=
+  "http://twitter.github.com/bootstrap/assets/css/bootstrap.css"
+  rel="stylesheet" type="text/css">
+  <style type="text/css">
+    body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      input {width:100%}
+      .torrentdesc {overflow:hidden}
+  </style>
+</head>
+
+<body>
+  <noscript>
+  <h1>This page requires javascript :(</h1></noscript>
+
+  <div id="all" style="display:none">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <span class="brand">Demagnetizr V0.4b -
+          Tweetable magnet links</span>
+          <p class="navbar-text pull-right">
+            <a target="_blank" href="https://gist.github.com/1731123#readme"><strong>Help</strong></a>
+            (from <a target="_blank" href="https://gist.github.com/1731123#uFaq">what's a magnet</a> to geeky stuff)
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+
+        <div class="span6">
+          <div class="well">
+            <div class="row-fluid">
+              <div class="span12">
+                <h1>Download</h1>
+                <input class="selectme" id="inp" value=""
+                placeholder=
+                "Use search or recommendations, or paste a magnet URL here">
+              </div>
+            </div>
+
+            <div id="results">
+              <div class="row-fluid">
+                <div class="span12">
+                  <div class="torrentdesc" style=
+                  "margin-bottom:8px">
+                    <h3 id="desc"></h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row-fluid">
+                <div class="span6">
+                  <a class="btn btn-large btn-primary" id="maglink"
+                  name="maglink">Download the torrent</a>
+                  <p><!-- Yeah. I suck at CSS --></p>
+                  <p>Download button doesn't work? You need <a target="_blank" href="https://gist.github.com/1731123#uFaq">magnet</a>-friendly software:</p>
+                  <div class="btn-group">
+                    <a class="btn" target="_blank" href=
+                    "http://www.transmissionbt.com/download/">Linux/Mac</a>
+                    <a class="btn" target="_blank" href=
+                    "http://www.utorrent.com/">Windows</a>
+                  </div>
+                </div>
+
+                <div class="span6">
+                  <a class="btn btn-large" target="_blank" id=
+                  "tweet" name="tweet">Tweet about it</a>
+                  <p><!-- Yeah. I suck at CSS --></p>
+                  <p>For IM etc. copy this url:</p>
+                  <input id="demag" class="selectme" value="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="span6">
+          <div class="notwell">
+            <div class="row-fluid">
+              <div class="span4">
+                <h2>Search</h2>
+              </div>
+
+              <div class="span8 pagination-right">
+                (courtesy of <a target="_blank" href=
+                "http://thorrents.com">Thorrents.com</a> API)
+              </div>
+            </div>
+
+            <div class="row-fluid">
+              <div class="span10">
+                <input class="selectme" id="searchterm" value=""
+                placeholder="bill hicks">
+              </div>
+
+              <div class="span2">
+                <a id="searchbutton" class="btn" href=
+                "#">Search</a>
+              </div>
+            </div>
+
+            <div class="row-fluid">
+              <div class="span12">
+                <div id="searchresults"></div>
+              </div>
+            </div>
+
+            <!-- begin patron branding -->
+            <div class="row-fluid">
+              <div class="span12">
+                <h2><a target="_blank" href="https://magnethead.jottit.com/">MagnetHead</a> recommends</h2>
+              </div>
+            </div>
+            <div class="row-fluid">
+              <div class="span3">
+                  <a target="_blank" href="https://magnethead.jottit.com/"><img src="MagnetHead.png"></a>
+              </div>
+
+              <div class="span9" id="recommended">
+                <ul class="nav nav-list">
+                  <li><a href="#magnet%3A%3Fxt%3Durn%3Abtih%3A1ac86d8025c36835fccddc8901e0c3a5664485f7%26dn%3DADBUSTERS%2BIssues%2B90-95%2B%26tr%3Dudp%253A%252F%252Ftracker.openbittorrent.com%253A80%26tr%3Dudp%253A%252F%252Ftracker.publicbt.com%253A80%26tr%3Dudp%253A%252F%252Ftracker.istole.it%253A6969%26tr%3Dudp%253A%252F%252Ftracker.ccc.de%253A80">Magazine: Adbusters</a></li> 
+
+                  <li><a href="#magnet%3A%3Fxt%3Durn%3Abtih%3A2abc33482794e7fba691994170fa09ebaa998e38%26dn%3DCory%2BDoctorow%2B-%2BLittle%2BBrother%2B-%2BAudio%2BBook%26tr%3Dudp%253A%252F%252Ftracker.openbittorrent.com%253A80%26tr%3Dudp%253A%252F%252Ftracker.publicbt.com%253A80%26tr%3Dudp%253A%252F%252Ftracker.ccc.de%253A80">Audio book: Little Brother</a></li>
+                  <li><a href="#magnet%3A%3Fxt%3Durn%3Abtih%3A3949df5c9d52c50e2a30a0dc25b57bb81e330222%26dn%3DOccupy%2BWall%2BSt%2B100%2BTerryfing%2BFacts%2BAnd%2BStatistics%2BAbout%2BThe%2BCurr%26tr%3Dudp%253A%252F%252Ftracker.openbittorrent.com%253A80%26tr%3Dudp%253A%252F%252Ftracker.publicbt.com%253A80%26tr%3Dudp%253A%252F%252Ftracker.ccc.de%253A80">Audio: 100 reasons to occupy wall street</a></li>
+                  <li><a href="#magnet%3A%3Fxt%3Durn%3Abtih%3A54e6bef13faf2133f0d59c397c9a1613ddabb12b%26dn%3DSpiral%2BTribe%2B-%2BBreach%2BThe%2BPeace%2BEP%2B%2528vinyl%2Brip%2B192Kbps%2529%26tr%3Dudp%253A%252F%252Ftracker.openbittorrent.com%253A80%26tr%3Dudp%253A%252F%252Ftracker.publicbt.com%253A80%26tr%3Dudp%253A%252F%252Ftracker.ccc.de%253A80">EP: 90s UK ravers with an attitude</a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- end patron branding -->
+            <div class="row-fluid">
+              <div class="span12 pagination-right">
+                <hr>
+                <h4>Become
+                    a <a target="_blank" href="https://magnethead.jottit.com/">Demagnetizr Patron</a></h4>
+              </div>
+            </div>
+          </div><!--/.notwell -->
+        </div><!--/span-->
+      </div>
+    </div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src=
+    "http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"
+    type="text/javascript">
+</script>
+     <script src=
+    "http://twitter.github.com/bootstrap/assets/js/bootstrap-button.js"
+    type="text/javascript">
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
+</script>
+     <script type="text/javascript">
+$(function(){
+      $('#all').show();
+      // Both url ?search (legacy) and #hash are supported
+      // as well as hash of parent window
+      var urlhash = location.hash.substr(1)||location.search.substr(1);
+      if (!urlhash && window.top.location.hash) // pastehtml being "clever"
+        urlhash = window.top.location.hash.substr(1);
+      // Some browsers unescape hash, some don't. Grrr.
+      if (urlhash.substr(6,1) === '%') urlhash=unescape(urlhash);
+      console.log('urlhash');
+      var render_magnet = function() { // render title, magnet link and twitter link
+            var inp=$('#inp').attr('value');
+            if (inp.substr(0,7)==='magnet:'){
+                var desc = '';
+                try {
+                  desc = unescape(inp.match(/&dn=([^&]*)&/)[1]).replace(/\+/g,' ')
+                } catch(e) {
+                  console.log(inp);
+                }
+                $("#desc").text(desc);
+                // split on both '#' and '?' to also support ?search
+                var demag = location.href.split('#')[0].split('?')[0]+'#'+encodeURIComponent(inp);
+                $('#maglink').attr('href',inp);
+                $('#demag').attr('value',demag);
+                $('#tweet').attr('href','https://twitter.com/intent/tweet?text='+
+                  encodeURIComponent(desc.substr(0,100))+
+                  '%20%23demagnetizr&url='+encodeURIComponent(demag));
+                $('#results').show();
+            } else {
+                $('#results').hide();
+            }
+          },
+          use_magnet = function() { // click function of a search result link
+            $('#inp').attr('value',unescape($(this).attr('href').replace(/.*#/,'')));
+            render_magnet();
+          },
+          search_magnets = function(){ // search via thorrents.com API
+            var query = encodeURIComponent($('#searchterm').attr('value').replace(/^ */,'').replace(/ *$/,''));
+            if (!query) return;
+            var limit = 10,
+                domain = "thorrents.com",
+                url = 'http://'+domain+'/search/'+query+'.json?callback=?';
+            $("#searchresults").empty().append(
+              $('<div/>').addClass('progress progress-info progress-striped active').append(
+                $('<div/>').addClass('bar').css('width','100%')
+              )
+            );
+            $.getJSON(url, function(data) {
+              $("#searchresults").text('Found nothing :(');
+              $.each(data.results, function(idx, result) {
+                if (!idx) {
+                  $("#searchresults").empty().append(
+                    $('<div/>').addClass('row-fluid').append(
+                      $('<div/>').addClass('span2 pagination-right').text('Seeds')
+                    ).append(
+                      $('<div/>').addClass('span9 offset1 torrentdesc').text('Torrent')
+                    )
+                  );
+                }
+                $("#searchresults").append(
+                  $('<div/>').addClass('row-fluid').append(
+                    $('<div/>').addClass('span2 pagination-right').text(result.seeds)
+                  ).append(
+                    $('<div/>').addClass('span9 offset1 torrentdesc').append(
+                      $('<a/>').attr('href',
+                        '#'+encodeURIComponent(result.magnet)).text(result.name)
+                    )
+                  )
+                );
+                if (idx+1 >= limit) {
+                  return false;
+                }
+              });
+              $('#searchresults a').click(use_magnet);
+            });
+          };
+      $('#recommended a').click(use_magnet);
+      $('.selectme').click(function(){$(this).select();});
+      $('#demag').attr('readonly','readonly').css('cursor','auto');
+      $('#searchbutton').click(search_magnets);
+      $('#searchterm').bind("keyup",function(e) {
+        if (e.keyCode === 13) search_magnets();
+      });
+      $('#inp').attr('value',urlhash).bind("change keyup",render_magnet);
+      render_magnet();
+    });
+    </script>
+  </div>
+</body>
+</html>
