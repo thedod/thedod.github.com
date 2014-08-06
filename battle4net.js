@@ -1,6 +1,4 @@
-/* code was "nicked" from an old fixthecfaa.com campaign.
-   If you "steal this code", remember to take close.png too ;)
-*/
+/* Code/demo at http://codepen.io/thedod/pen/jzFhg */
 ((function(){
   var url = 'https://www.battleforthenet.com/embed.html/';
   
@@ -55,18 +53,18 @@
         left : 0,
         width: '100%',
         height: 480
-      }).html('<iframe src="https://www.battleforthenet.com/embed.html"'+
+      }).attr('id','b4tn').html('<iframe src="https://www.battleforthenet.com/embed.html"'+
               ' frameborder="0" scrolling="no" allowTransparency="true"'+
               ' style="width: 100%; height: 480px;"></iframe>');
       $('body').prepend(over);
       
       var close = $('<a>').css({
-        background : "url(close.png)",
+        background : "url(https://thedod.github.io/close.png)",
         width: 30,
         height: 30,
         position:'absolute',
         top: 0,
-        left : "25%", // a wild shot :)
+        left : $('#b4tn').width()/2-260,
         cursor : 'pointer'
       }).click(function(){
         setCookie('_dp_b4tn', '1', 1000);
