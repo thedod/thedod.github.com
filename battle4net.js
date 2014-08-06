@@ -64,7 +64,7 @@
         height: 30,
         position:'absolute',
         top: 0,
-        left : $('#b4tn').width()/2-260,
+        left : Math.max(23,$('#b4tn').width()/2-260),
         cursor : 'pointer'
       }).click(function(){
         setCookie('_dp_b4tn', '1', 1000);
